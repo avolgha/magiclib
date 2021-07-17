@@ -1,0 +1,25 @@
+{
+  "name": "magiclib",
+  "version": "1.0.0",
+  "description": "Library for some things I need in my programs",
+  "main": "build/src/index.js",
+  "author": "Marius",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.0",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc && find | grep _loggerImpl | xargs cp -t build/src/entities",
+    "fix": "gts fix",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
